@@ -35,9 +35,9 @@ const Home = ({ searchParams }: SearchParamProps) => {
       </section>
 
       <Image
-        src="/assets/images/onboarding-img.webp"
-        height={1000}
-        width={1000}
+        src="/assets/images/onboarding.jpg"
+        height={946}
+        width={736}
         alt="patient"
         className="side-img max-w-[50%]"
       />
