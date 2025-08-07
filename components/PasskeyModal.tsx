@@ -67,7 +67,7 @@ export const PasskeyModal = () => {
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
-      <AlertDialogContent className="shad-alert-dialog">
+      <AlertDialogContent className="shad-alert-dialog max-sm:w-[100vw] !overflow-auto">
         <AlertDialogHeader>
           <AlertDialogTitle className="flex items-start justify-between">
             Admin Access Verification
@@ -92,12 +92,12 @@ export const PasskeyModal = () => {
             onChange={(value) => setPasskey(value)}
           >
             <InputOTPGroup className="shad-otp">
-              <InputOTPSlot className="shad-otp-slot" index={0} />
-              <InputOTPSlot className="shad-otp-slot" index={1} />
-              <InputOTPSlot className="shad-otp-slot" index={2} />
-              <InputOTPSlot className="shad-otp-slot" index={3} />
-              <InputOTPSlot className="shad-otp-slot" index={4} />
-              <InputOTPSlot className="shad-otp-slot" index={5} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={0} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={1} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={2} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={3} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={4} />
+              <InputOTPSlot className="shad-otp-slot max-sm:!size-12" index={5} />
             </InputOTPGroup>
           </InputOTP>
 

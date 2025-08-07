@@ -14,9 +14,26 @@ import {
 } from "../appwrite.config";
 import { parseStringify } from "../utils";
 
+// LOGIN USER
+export const loginUser = async (user: CreateUserParams) => {
+  try {
+    // Fetch existing user by email
+    const existing = await users.list([Query.equal("email", [user.email])]);
+    return parseStringify(existing.users[0]);
+  } catch (error: any) {
+    console.error("An error occurred while logging in the user:", error);
+  }
+};
+
 // CREATE APPWRITE USER
 export const createUser = async (user: CreateUserParams) => {
   try {
+    // Check if user already exists by email
+    const existing = await users.list([Query.equal("email", [user.email])]);
+    if (existing.users && existing.users.length > 0) {
+      return await loginUser(user);
+    }
+
     // Create new user -> https://appwrite.io/docs/references/1.5.x/server-nodejs/users#create
     const newuser = await users.create(
       ID.unique(),
@@ -28,15 +45,7 @@ export const createUser = async (user: CreateUserParams) => {
 
     return parseStringify(newuser);
   } catch (error: any) {
-    // Check existing user
-    if (error && error?.code === 409) {
-      const existingUser = await users.list([
-        Query.equal("email", [user.email]),
-      ]);
-
-      return existingUser.users[0];
-    }
-    console.error("An error occurred while creating a new user:", error);
+    console.error("An error occurred while creating or checking user:", error);
   }
 };
 
