@@ -81,7 +81,8 @@ export const PasskeyModal = () => {
             />
           </AlertDialogTitle>
           <AlertDialogDescription>
-            To access the admin page, please enter the passkey.
+            Please enter the following passkey to access the admin page:
+            123456
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div>
