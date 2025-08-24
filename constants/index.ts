@@ -67,11 +67,11 @@ export const Doctors = [
   },
   {
     image: "/assets/images/dr-peter.png",
-    name: "Umair Farhat",
+    name: "Umair Hasan",
   },
   {
     image: "/assets/images/dr-livingston.png",
-    name: "Aslam Razi",
+    name: "Aslam Hasan",
   },
   {
     image: "/assets/images/dr-peter.png",
